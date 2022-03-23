@@ -9,5 +9,8 @@ public enum Tokens {
     Division,
     Identificador,
     Numero,
+    Separador,
+    Incremento,
+    Delimitador,
     ERROR // .
 }

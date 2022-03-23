@@ -1,1 +1,15 @@
-num edad = 10
+num edad = 1;
+
+text nombre = "antonio"
+
+dnum = 5.5
+
+if(edad <= 21){
+
+   for(int i = 0; num < 10; i++)
+   {
+       edad = edad [+] 1;
+   }
+
+}
+

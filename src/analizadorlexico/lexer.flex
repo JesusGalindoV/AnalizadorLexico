@@ -21,6 +21,9 @@ else |
 for |
 and |
 or |
+publica |
+privada |
+estatico |
 while {lexeme=yytext(); return Reservadas;}
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
@@ -29,6 +32,12 @@ while {lexeme=yytext(); return Reservadas;}
 "[-]" {return Resta;}
 "[*]" {return Multiplicacion;}
 "[/]" {return Division;}
+";" {lexeme=yytext(); return Delimitador;}
+"++" {lexeme=yytext(); return Incremento;}
+"(" |
+")" |
+"{" |
+"}" {lexeme=yytext(); return Separador;}
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
  . {return ERROR;}

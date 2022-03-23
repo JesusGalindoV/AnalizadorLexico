@@ -84,7 +84,7 @@ public String abrirArchivo(File archivo) {
         });
 
         btnRegEx.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnRegEx.setText("RegEx");
+        btnRegEx.setText("Borrar");
         btnRegEx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegExActionPerformed(evt);
@@ -168,7 +168,11 @@ public String abrirArchivo(File archivo) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegExActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegExActionPerformed
+        txtEntrada.selectAll();
+        txtEntrada.replaceSelection("");
         
+        txtSalida.selectAll();
+        txtSalida.replaceSelection("");
     }//GEN-LAST:event_btnRegExActionPerformed
 
     private void btnAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirActionPerformed
@@ -212,33 +216,42 @@ public String abrirArchivo(File archivo) {
                 }
                 switch(tokens){
                     case Reservadas:
-                        resultado += lexer.lexeme + ": es una palabra " + tokens  + "\n";
+                        resultado += lexer.lexeme + " <es una palabra " + tokens  + ">\n";
                         break;
                     case Igual:
-                        resultado += "es un " + tokens + "\n";
+                        resultado += " <es un " + tokens + ">\n";
                         break;
                     case Suma:
-                        resultado += "Operando SUMA\n";
+                        resultado += " <Operando SUMA>\n";
                         break;
                     case Resta:
-                        resultado += "Operando RESTA\n";
+                        resultado += " <Operando RESTA>\n";
                         break;
                     case Multiplicacion:
-                        resultado += "Operando MULTIPLICACIÓN\n";
+                        resultado += " <Operando MULTIPLICACIÓN>\n";
                         break;
                     case Division:
-                        resultado += "Operando DIVISION\n";
+                        resultado += " <Operando DIVISION>\n";
                         break;
                     case Identificador:
-                        resultado += lexer.lexeme + ": es un " + tokens + "\n";
+                        resultado += lexer.lexeme + " <es un " + tokens + ">\n";
                         break;
                     case Numero:
-                        resultado += lexer.lexeme + ": es un " + tokens + "\n";
+                        resultado += lexer.lexeme + " <es un " + tokens + ">\n";
                         break;
                     case ERROR:
-                        resultado += "Simbolo no definido\n";
+                        resultado += " <Simbolo no definido>\n";
                         break;
-                    
+                    case Separador:
+                        resultado += lexer.lexeme + " <es un " + tokens + ">\n";
+                        break;
+                    case Incremento:
+                        resultado += lexer.lexeme + " <es un " + tokens + ">\n";
+                        break;
+                    case Delimitador:
+                        resultado += lexer.lexeme + " <es un " + tokens + ">\n";
+                        break;
+                        
                     default:
                         resultado += "Token: " + tokens + "\n";
                         break;
