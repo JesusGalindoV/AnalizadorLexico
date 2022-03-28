@@ -5,7 +5,8 @@ import java.io.File;
 public class Principal {
 
     public static void main(String[] args) {
-        String ruta = "C:/Users/jesus/Desktop/AnalizadorLexico/src/analizadorlexico/Lexer.flex";
+        //String ruta = "C:/Users/jesus/Desktop/AnalizadorLexico/src/analizadorlexico/Lexer.flex";
+        String ruta = "../AnalizadorLexico/src/analizadorlexico/Lexer.flex";
         generarLexer(ruta);
         
     }
@@ -14,5 +15,6 @@ public class Principal {
         File archivo = new File(ruta);
         
         JFlex.Main.generate(archivo);
+        
     }
 }

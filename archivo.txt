@@ -1,8 +1,6 @@
-num edad = 1;
+num edad = 21;
 
 text nombre = "antonio"
-
-dnum = 5.5
 
 if(edad <= 21){
 
